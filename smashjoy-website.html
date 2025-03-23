@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Play SmashJoy - an exciting stickman game where you collect and build your army to defeat enemies">
+    <title>SmashJoy - Exciting Stickman Army Building Game</title>
+    <link rel="canonical" href="https://smashjoy.info" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        apple: {
+                            blue: '#007AFF',
+                            red: '#FF3B30',
+                            green: '#34C759',
+                            gray: '#8E8E93',
+                            lightGray: '#F2F2F7',
+                            darkGray: '#1C1C1E',
+                        },
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+    </style>
+    <script>
+        function reloadGameFrame() {
+            const gameFrame = document.querySelector('iframe');
+            gameFrame.src = gameFrame.src;
+        }
+        
+        // Add event listener to handle potential iframe load errors
+        window.addEventListener('load', function() {
+            const gameFrame = document.querySelector('iframe');
+            gameFrame.onerror = function() {
+                alert('There was an error loading the game. Please try reloading.');
+            };
+        });
+    </script>
+</head>
+<body class="bg-apple-lightGray dark:bg-apple-darkGray text-apple-darkGray dark:text-white min-h-screen">
+    <header class="bg-apple-blue text-white py-6 px-4 shadow-md">
+        <div class="container mx-auto">
+            <h1 class="text-3xl md:text-4xl font-bold">SmashJoy</h1>
+            <p class="text-lg mt-2">Build your stickman army and crush your enemies!</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto py-8 px-4">
+        <section class="mb-12">
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden">
+                <div class="aspect-w-16 aspect-h-9 w-full">
+                    <iframe 
+                        src="https://games.crazygames.com/en_US/count-masters-stickman-games/index.html?v=1.326" 
+                        class="w-full h-[500px] md:h-[600px]" 
+                        frameborder="0" 
+                        allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen
+                        loading="lazy"
+                        sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+                        title="SmashJoy Game">
+                    </iframe>
+                </div>
+                <div class="text-center my-4">
+                    <button onclick="reloadGameFrame()" class="bg-apple-blue hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                        Reload Game
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
+                <h2 class="text-2xl font-bold text-apple-blue mb-4">How to Play</h2>
+                <p class="mb-4">
+                    SmashJoy is an addictive stickman army-building game where you collect fighters and battle against enemy groups. Swipe to control your stickman army, collect number gates to grow your forces, and strategically navigate through obstacles to reach the finish line.
+                </p>
+                <p>
+                    With simple controls and exciting gameplay, SmashJoy offers hours of entertainment for players of all ages.
+                </p>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
+                <h2 class="text-2xl font-bold text-apple-blue mb-4">Game Features</h2>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li>Easy to learn, one-finger controls</li>
+                    <li>Collect and grow your stickman army</li>
+                    <li>Battle against enemy forces</li>
+                    <li>Multiple challenging levels</li>
+                    <li>Vibrant, colorful graphics</li>
+                    <li>Exciting boss battles</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6">
+                <h2 class="text-2xl font-bold text-apple-blue mb-4">Tips & Strategies</h2>
+                <div class="space-y-4">
+                    <p>
+                        <strong>Collect Wisely:</strong> Always aim for the highest number gates to maximize your army size.
+                    </p>
+                    <p>
+                        <strong>Avoid Obstacles:</strong> Be careful with negative number gates and obstacles that can reduce your army.
+                    </p>
+                    <p>
+                        <strong>Boss Battles:</strong> Save as many stickmen as possible for the final boss battle at the end of each level.
+                    </p>
+                    <p>
+                        <strong>Strategic Positioning:</strong> Position your army to collect bonuses while avoiding traps and enemies.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-apple-blue text-white py-6 px-4">
+        <div class="container mx-auto text-center">
+            <p>© 2025 SmashJoy. All rights reserved.</p>
+            <p class="mt-2 text-sm">
+                SmashJoy is an online stickman army building game. Play for free on smashjoy.info
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
